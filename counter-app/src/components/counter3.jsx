@@ -4,8 +4,10 @@ import React, { Component } from "react"; //type imrc
 class Counter3 extends Component {
   //type cc
   state = {
-    count: 0,
-    tags: ["tag1", "tag2", "tag3"],
+    //count: 0,
+    value: this.props.value
+
+
   };
   /*
   constructor() {
@@ -34,7 +36,9 @@ class Counter3 extends Component {
 
   //we dont call the handle method, just passing a reference
   render() {
+    console.log('props', this.props);
     return (
+
       <React.Fragment>
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         <button
@@ -44,9 +48,6 @@ class Counter3 extends Component {
           Increment
         </button>
         <ul>
-          {this.state.tags.map((tag) => (
-            <li key={tag}> {tag} </li>
-          ))}
         </ul>
       </React.Fragment>
     );
