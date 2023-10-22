@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import Counter4 from "./counter4";
+import Counter5 from "./counter5";
 
 class Counters extends Component {
   state = {
@@ -10,13 +10,15 @@ class Counters extends Component {
       { id: 4, value: 0 },
     ],
   };
+
+  handleDelete = () =>{
+    console.log("event handler called");
+  }
   render() {
     return (
       <React.Fragment>
         {this.state.counters.map((counter) => (
-          <Counter4 key={counter.id} value={counter.value}>
-            <h4>Counter # {counter.id} </h4>
-          </Counter4>
+          <Counter5 key={counter.id} value={counter.value} onDelete={this.handleDelete}></Counter5>
         ))}
       </React.Fragment>
     );
