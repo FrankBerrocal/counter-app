@@ -1,7 +1,7 @@
 import React, { Component } from "react"; //type imrc
 
 //in jsx we dont have loops, we have maps
-class Counter extends Component {
+class Counter3 extends Component {
   //type cc
   state = {
     count: 0,
@@ -37,22 +37,16 @@ class Counter extends Component {
   render() {
     return (
       <React.Fragment>
-        <span style={{ fontSize: 15 }} className={this.getBadgeClasses()}>
-          {this.formatCount()}
-        </span>
+        <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         <button
           onClick={this.handleIncrement}
-          style={{ fontSize: 20 }}
           className='btn btn-secondary btn-sm'
         >
           Increment
         </button>
         <ul>
           {this.state.tags.map((tag) => (
-            <li key={tag} style={{ fontSize: 15, color: "black", margin: 10 }}>
-              {" "}
-              {tag}{" "}
-            </li>
+            <li key={tag}> {tag} </li>
           ))}
         </ul>
       </React.Fragment>
@@ -74,5 +68,4 @@ class Counter extends Component {
 //for classname, use Bootstrap
 //https://getbootstrap.com/docs/4.1/getting-started/introduction/
 //use classes for maintability
-
-export default Counter; //we are exporting
+export default Counter3; //we are exporting
