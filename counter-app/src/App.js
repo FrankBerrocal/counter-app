@@ -18,7 +18,7 @@ class App extends Component {
     const index = counters.indexOf(counter);
     counters[index] = { ...counter };
     counters[index].value++;
-    this.setState({ counters });
+    this.setState({ counterElements: counters });
   };
 
   handleReset = () => {
@@ -26,14 +26,15 @@ class App extends Component {
       c.value = 0;
       return c;
     });
-    this.setState({ counters });
+    this.setState({ counterElements: counters });
   };
 
   handleDelete = (counterID) => {
+    console.log(counterID);
     const counters = this.state.counterElements.filter(
       (c) => c.id !== counterID
     );
-    this.setState({ counters });
+    this.setState({ counterElements: counters });
   };
 
   render() {
@@ -42,7 +43,7 @@ class App extends Component {
         <Navbar />
         <main className='container'>
           <Counters
-            key={this.state.counterElements.id}
+            //key={this.state.counterElements.id}
             onIncrement={this.handleIncrement}
             onReset={this.handleReset}
             onDelete={this.handleDelete}

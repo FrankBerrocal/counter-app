@@ -7,7 +7,7 @@ class Counters extends Component {
       <React.Fragment>
         <button
           onClick={this.props.onReset}
-          lassName='btn btn-primary btn-sm m-2'
+          className='btn btn-primary btn-sm m-2'
         >
           Reset
         </button>
@@ -16,7 +16,7 @@ class Counters extends Component {
             key={counter.id} //used internally
             onDelete={this.props.onDelete} //keep passing the reference to all children
             onIncrement={this.props.onIncrement}
-            counterProps={counter}
+            counter={counter}
           ></Counter6>
         ))}
       </React.Fragment>
