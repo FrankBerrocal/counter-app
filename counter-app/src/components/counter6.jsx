@@ -1,19 +1,12 @@
 import React, { Component } from "react";
 
-class Counter5 extends Component {
-
-
-  handleIncrement = () => {
-    this.setState({ value: this.state.value + 1 });
-  };
-
-  //we dont call the handle method, just passing a reference
+class Counter6 extends Component {
   render() {
     return (
       <div>
         <span className={this.getBadgeClasses()}>{this.formatCount()}</span>
         <button
-          onClick={this.handleIncrement}
+          onClick={()=> this.props.onIncrement(this.props.counterProps)}
           className='btn btn-secondary btn-sm'
         >
           Increment
@@ -31,12 +24,12 @@ class Counter5 extends Component {
 
   getBadgeClasses() {
     let classes = "badge m-2 badge-";
-    classes += this.state.value === 0 ? "warning" : "primary";
+    classes += this.props.counterProps.value === 0 ? "warning" : "primary";
     return classes;
   }
 
   formatCount() {
-    const { value } = this.state; //add the curly braces.
+    const { value } = this.props.counterProps; 
     return value === 0 ? "Zero" : value;
   }
 }
@@ -44,4 +37,4 @@ class Counter5 extends Component {
 //for classname, use Bootstrap
 //https://getbootstrap.com/docs/4.1/getting-started/introduction/
 //use classes for maintability
-export default Counter5; //we are exporting
+export default Counter6; //we are exporting
