@@ -1,9 +1,7 @@
 import React, { Component } from "react";
 
 class Counter5 extends Component {
-  state = {
-    value: this.props.counterProps.value,
-  };
+
 
   handleIncrement = () => {
     this.setState({ value: this.state.value + 1 });
